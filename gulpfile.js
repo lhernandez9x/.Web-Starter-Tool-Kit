@@ -43,7 +43,7 @@ var HTML = '/{*.html,**/*.html}',
     CSS = '/**/styles',
     SCSS = '/{styles,**}/*.scss',
     SCRIPTS = '/{js,**}/{libs,**}/*.js',
-    IMG = '/{**/images/*.{png,jpeg,jpg,gif,svg},images/*.{png,jpeg,jpg,gif,svg}',
+    IMG = '/**/*.{png,jpeg,jpg,gif,svg}',
     AUD = '/{audio,**}/*.mp3';
 
 
