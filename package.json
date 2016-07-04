@@ -1,14 +1,14 @@
 {
-  "name": "*PUT NAME OF REPOSITORY (url friendly, no caps)",
+  "name": "web-starter-tool-kit",
   "version": "1.0.0",
-  "description": "*CHANGE DESCRIPTION TO WHAT YOU NEED IT TO BE*",
+  "description": "A starting tool kit for any web developer to build and test a website",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git:https://*ENTER REPOSITORY URL HERE*.git"
+    "url": "git:https://github.com/ecDusty/.Web-Starter-Tool-Kit.git"
   },
   "keywords": [
     "Animals",

@@ -119,7 +119,7 @@ gulp.task('scripts-dist', ['lint'], function () {
 =   Scripts  =
 =   for Dev  =
 =============*/
-gulp.task('scripts-dev', ['lint'], function () {
+gulp.task('scripts-dev'/*, ['lint']*/, function () {
   console.log(strt + 'SCRIPTS DEV' + end);
 
   return gulp.src(SCRIPTS_PATH)
@@ -127,7 +127,7 @@ gulp.task('scripts-dev', ['lint'], function () {
     .pipe(babel())
     .pipe(concat('all.js'))
     .pipe(srcMaps.write())
-    .pipe(gulp.dest(TEST_JS));
+    .pipe(gulp.dest(D));
 });
 
 /*============
