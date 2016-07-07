@@ -33,35 +33,23 @@ var browserSync = require('browser-sync').create();
 /*============
 = File Paths =
 =============*/
-//Main Folders
-var S = 'src',
-	D = 'dist',
-	T = 'test';
-
-//File Type Sources
-var HTML = '',
-	CSS = '',
-	SCSS = '/{styles,**}/*.scss',
-	SCRIPTS = '//{js,**}/{libs,**}/*.js',
-	IMG = '/images/*.{png,jpeg,jpg,gif,svg}',
-	AUD = '/audio/*.mp3';
 
 
 //Source
 var SCRIPTS_PATH = 'src/js/{libs,**}/*.js',
 	HTML_PATH = 'src/{*.html,**/*.html}',
-	CSS_PATH = 'src/css/**/*.css',
-	IMG_PATH = 'src/{**,images}/images/**/*.{png,jpeg,jpg,gif,svg}',
+	IMG_PATH = 'src/**/images/*.{png,jpeg,jpg,gif,svg}',
 	SCSS_PATH = 'src/styles/**/*.scss',
 	AUD_PATH = 'src/audio/*.mp3';
+//	CSS_PATH = 'src/css/**/*.css', /*No Longer needed as styles are created in SASS*/ */
 
 
 //Distribution
 var DIST_DIR = 'dist',
 	DIST_CSS = 'dist/styles',
 	DIST_JS = 'dist/js',
-	DIST_IMG = 'dist/images/*.{png,jpeg,jpg,gif,svg}',
-	DIST_AUD = 'dist/audio/*.mp3';
+	DIST_IMG = 'dist/images',
+	DIST_AUD = 'dist/audio';
 
 //Testing
 var TEST_DIR = 'test',
@@ -183,8 +171,8 @@ gulp.task('html-dev', function () {
 		}))
 	.pipe(htmlMinify({
 		collapseWhitespace: true,
-		minifyCSS: true,
-		minifyJS: true,
+		minifyCSS: false,
+		minifyJS: false,
 		removeComments: true
 		}))
 	.pipe(gulp.dest(TEST_DIR));
@@ -232,7 +220,7 @@ gulp.task('serve:dist', function() {
 	}
 	});
 
-	gulp.watch(['dist/{*.html,**/*.html}', 'dist/**/*.css', 'dist/**/*.js', 'dist/**/images/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
+	gulp.watch(['dist/{*.html,**/*.html}', 'dist/**/*.css', 'dist/**/*.js', 'dist/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
 });
 
 /*============
@@ -253,8 +241,7 @@ gulp.task('serve:dev', function() {
 	}
 	});
 
-	gulp.watch(['test/{*.html,**/*.html}', 'test/**/*.css', 'test/**/*.js', 'test/**/images/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
-
+	gulp.watch(['test/{*.html,**/*.html}', 'test/**/*.css', 'test/**/*.js', 'test/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
 });
 
 /*============
